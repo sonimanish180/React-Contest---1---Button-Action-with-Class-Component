@@ -1,31 +1,33 @@
-import { parseAsync } from "@babel/core";
-import React, { Component, useState } from "react";
-import "../styles/App.css";
+import React from "react";
+import "./../styles/App.css";
+import Text from "./Text";
 
-class App extends Component {
+export default class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      text: ""
+    };
+    this.textData =
+      "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy";
   }
-  // [paragraph, setParagraph] = React.useState("");
-  this.state = [paragraph];
 
-  this.renderPara = function () {
-    return (React.state.paragraph =
-      "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy");
-  };
-
+  // const clickFn = () => {
+  //   setText(textData);
+  // };
   render() {
     return (
-      <div id="main">
-        <button onClick={renderPara()} id={"click"}>
-          {" "}
-          Render Paragraph{" "}
+      <>
+        <div id="main">{/* // Do not alter the main div */}</div>
+        <button>Brooo</button>
+        <button
+          id="click"
+          onClick={() => this.setState({ text: this.textData })}
+        >
+          CLICK
         </button>
-        <p id={"para"}> {React.state.paragraph} </p>
-        {/* Do not remove this main div!! */}
-      </div>
+        <Text text={this.state.text} />
+      </>
     );
   }
 }
-
-export default App;
