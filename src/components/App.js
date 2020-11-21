@@ -20,14 +20,11 @@ export default class App extends React.Component {
       <>
         <div id="main">
           {/* // Do not alter the main div */}
-          {this.state.txt && <p>{this.textData}</p>}
+          {this.state.txt && <p id="para">{this.textData}</p>}
           <button id="click" onClick={() => this.setState({ txt: true })}>
             CLICK
           </button>
-          {/* <Para /> */}
         </div>
-
-        {/* <Text txt={this.state.txt} /> */}
       </>
     );
   }
