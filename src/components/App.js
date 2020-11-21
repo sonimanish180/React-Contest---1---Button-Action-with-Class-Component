@@ -1,12 +1,12 @@
 import React from "react";
 import "./../styles/App.css";
-import Text from "./Text";
+// import Para from "./Para";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ""
+      txt: false
     };
     this.textData =
       "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy";
@@ -18,15 +18,16 @@ export default class App extends React.Component {
   render() {
     return (
       <>
-        <div id="main">{/* // Do not alter the main div */}</div>
-        <button>Brooo</button>
-        <button
-          id="click"
-          onClick={() => this.setState({ text: this.textData })}
-        >
-          CLICK
-        </button>
-        <Text text={this.state.text} />
+        <div id="main">
+          {/* // Do not alter the main div */}
+          {this.state.txt && <p>{this.textData}</p>}
+          <button id="click" onClick={() => this.setState({ txt: true })}>
+            CLICK
+          </button>
+          {/* <Para /> */}
+        </div>
+
+        {/* <Text txt={this.state.txt} /> */}
       </>
     );
   }
